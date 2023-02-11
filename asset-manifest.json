@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/React-App_Redux_TS/static/css/main.6a61c9a1.css",
+    "main.js": "/React-App_Redux_TS/static/js/main.0bdbb667.js",
+    "static/js/787.9241d6c7.chunk.js": "/React-App_Redux_TS/static/js/787.9241d6c7.chunk.js",
+    "static/media/bg.jpg": "/React-App_Redux_TS/static/media/bg.836be3a2c2a3d1fa22da.jpg",
+    "static/media/meat.png": "/React-App_Redux_TS/static/media/meat.321db7d1003cc562588a.png",
+    "static/media/salad.png": "/React-App_Redux_TS/static/media/salad.95adbe5ffcaf21433779.png",
+    "static/media/top_bun.png": "/React-App_Redux_TS/static/media/top_bun.5906eb50f043deb8e730.png",
+    "static/media/tomato.png": "/React-App_Redux_TS/static/media/tomato.e0b96cbd5477a6017dc7.png",
+    "static/media/bottom_bun.png": "/React-App_Redux_TS/static/media/bottom_bun.3970f5ca3e3602bca610.png",
+    "static/media/onion.png": "/React-App_Redux_TS/static/media/onion.0b9217d0d3ad6312ba72.png",
+    "static/media/pickle.png": "/React-App_Redux_TS/static/media/pickle.1c90aed5015981b9cd38.png",
+    "static/media/cheese.png": "/React-App_Redux_TS/static/media/cheese.dc7d75d3cdae7b40ef71.png",
+    "static/media/bacon.png": "/React-App_Redux_TS/static/media/bacon.f0fac70a552e11d553ad.png",
+    "static/media/logo1.png": "/React-App_Redux_TS/static/media/logo1.fbf95ec55f06cdd5f2fc.png",
+    "index.html": "/React-App_Redux_TS/index.html",
+    "main.6a61c9a1.css.map": "/React-App_Redux_TS/static/css/main.6a61c9a1.css.map",
+    "main.0bdbb667.js.map": "/React-App_Redux_TS/static/js/main.0bdbb667.js.map",
+    "787.9241d6c7.chunk.js.map": "/React-App_Redux_TS/static/js/787.9241d6c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a61c9a1.css",
+    "static/js/main.0bdbb667.js"
+  ]
+}
