@@ -1,0 +1,37 @@
+.menuBtn {
+    color: #FF6B0B;
+    text-decoration: none;
+    font-weight: 800;
+    border: none;
+    background: none;
+    font-size: 16px;
+    text-shadow: 5px 5px 10px #00000083;
+}
+.menuBtn:hover {
+    display:inline-block;
+    cursor: pointer; 
+    transform: scale(1.2); 
+}
+.btnActive {
+    position: relative;
+    cursor: pointer;
+    color: #FF6B0B;
+    text-decoration: none;
+    font-weight: 800;
+    border: none;
+    background: none;font-size: 16px;
+    text-shadow: 5px 5px 10px #00000083;
+}
+.btnActive::after {
+    position:absolute;
+    content: "";
+    display: block;
+    width: 80%;
+    height: 3px;
+    background: #FF6B0B;
+    left: 6px;
+    bottom: -10px;
+    border-radius: 1px;
+    opacity: 70%;
+    
+}
