@@ -4,6 +4,8 @@ import Ingredient from "./Ingredient";
 import Error from "../Error";
 import { useAppSelector } from "../../../store";
 import { PricesType } from "../../../features/priceSlice";
+import Tittle from "../Tittle";
+import { media } from "../../../Utils/Responsive";
 
 const Prices: React.FC = () => {
   const { prices, loading, error } = useAppSelector((store) => store.ingredients);
@@ -17,7 +19,7 @@ const Prices: React.FC = () => {
             <Error error={error} />
           ) : (
             <Div>
-              <Tittle>Our prices</Tittle>
+              <Tittle text="Our prices" />
               <PricesList>
                 {prices.map((element:PricesType) => (
                   <Ingredient
@@ -34,16 +36,18 @@ const Prices: React.FC = () => {
     </Wraper>
   );
 }
-const Wraper = styled.div({
-  color: "#fff",
-});
+const Wraper = styled.div`
+  color: #fff;
+  ${media.phone}{
+    display: none;
+  }
+`;
 const Div = styled.div({
   textAlign: "center",
   paddingTop: "50px",
+  
 });
-const Tittle = styled.h3({
-  color: "#FF6B0B",
-});
+
 const PricesList = styled.ul({
   margin: "0 0 0 30px",
   listStyle: "none",

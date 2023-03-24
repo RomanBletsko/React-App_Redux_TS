@@ -40,7 +40,7 @@ export const fetchOrderList = createAsyncThunk<OrderInfoI[], undefined, { reject
     }
   }
 );
-const sizePage = 5;
+const sizePage:number = 9;
 const buildOrdersPage = (array:any, sizePage:number):OrderInfoI[][] => {
   const arrayOfPages = [];
   for (let i = 0; i < 33; i += sizePage) {

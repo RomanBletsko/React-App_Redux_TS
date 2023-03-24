@@ -7,6 +7,9 @@ import {
   clearOrder,
 } from "../../../features/burgerSlice";
 import Error from "../Error";
+import Tittle from "../Tittle";
+import { media } from "../../../Utils/Responsive";
+import { PricesType } from "../../../features/priceSlice";
 
 
 interface IngredientDetailsType{
@@ -16,7 +19,7 @@ interface IngredientDetailsType{
 }
 
 const Controls: React.FC = () => {
-  const { ingredients, loading, prices, error } = useAppSelector(
+  const { loading, prices, error } = useAppSelector(
     (store) => store.ingredients
   );
   const { quantitie } = useAppSelector((store) => store.burger);
@@ -46,16 +49,18 @@ const Controls: React.FC = () => {
             <Error error={error} />
           ) : (
             <Div>
-              <Tittle>Our prices</Tittle>
+              <Tittle text="Controls" />
               {}
               <ControlsList >
-                {ingredients.map((element:string) => {
+                {prices.map((element:PricesType) => {
                   return (
-                    <ControlsItem key={element + "Item"}>
+                    <ControlsItem key={element.name + "Item"}>
                       <SingleControl
-                        name={element}
-                        quantitie={quantitie[element]}
+                        name={element.name}
+                        quantitie={quantitie[element.name]}
                         updateBurger={updateBurger}
+                        price={element.price}
+                        
                       />
                     </ControlsItem>
                   );
@@ -70,32 +75,34 @@ const Controls: React.FC = () => {
   );
 }
 const Wrapper = styled.div({});
-const Div = styled.div({
-  textAlign: "center",
-  paddingTop: "50px",
-});
-const Tittle = styled.h3({
-  color: "#FF6B0B",
-});
+const Div = styled.div`
+  text-align: center;
+  padding-top: 50px;
+  ${media.phone}{
+    padding-top: 10px;
+  }
+`;
 const ControlsList = styled.ul({
   margin: " 20px",
   listStyle: "none",
   padding: "0",
   textAlign: "start",
+  
 });
 
 const ControlsItem = styled.li({
   margin: "7px 0",
 });
 const ClearBtn = styled.button`
+  font-size: 16px;
   margin-bottom: 30px;
   background: #ff6b0b;
-  font-weight: 800;
+  font-weight: 700;
   border-radius: 5px;
   border: none;
-  padding: 7px 15px;
+  padding: 5px 15px;
   &:hover {
-    scale: 120%;
+    scale: 110%;
   }
 `;
 export default Controls;

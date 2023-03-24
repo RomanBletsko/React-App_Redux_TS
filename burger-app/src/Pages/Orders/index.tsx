@@ -8,6 +8,7 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import "./style.css";
 import Error from "../../components/Main_Components/Error/index";
+import Tittle from "../../components/Main_Components/Tittle";
 
 const style = {
   margin: "5px",
@@ -62,7 +63,7 @@ const Orders: React.FC = () => {
 
   return (
     <Wrapper>
-      <Tittle>Orders</Tittle>
+      <Tittle text="Orders"></Tittle>
       {loading ? (
         <Loader />
       ) : (
@@ -70,21 +71,14 @@ const Orders: React.FC = () => {
           {error ? (
             <Error error={error} />
           ) : (
-            <>
+            <BoxStyled>
               <ListStyled>
                 {orderList[pageNumber].map((order:OrderInfoI, index) => {
                   return (
                     <ItemStyled 
                     key={order._id}
                     >
-                      <ItemTittle
-                        className={
-                          index === orderIndex && detailsOpen ? "active" : ""
-                        }>
-                        {order.orderName}
-                      </ItemTittle>
-                      <span>price: {order.orderPrice} ₴</span>
-
+                      <HolderStyled>
                       {index === orderIndex && detailsOpen ? (
                         <>
                           <Button
@@ -106,27 +100,43 @@ const Orders: React.FC = () => {
                           Details
                         </Button>
                       )}
+                      <ItemTittle
+                        className={
+                          index === orderIndex && detailsOpen ? "active" : ""
+                        }>
+                        {order.orderName}
+                      </ItemTittle>
+                      <span>price: {order.orderPrice} ₴</span>
+                      </HolderStyled>
+
+                     
 
                       {index === orderIndex && detailsOpen ? (
                         <BoxDetailStyled>
                           <div>
                             <IngredientStyled>Order details</IngredientStyled>
-                            <p>phone: {order.orderPhone}</p>
-                            <p>address: {order.orderAddress}</p>
-                            <p>
+                            <>
+                            <SpanStyled>phone: {order.orderPhone}</SpanStyled>
+                            <SpanStyled>address: {order.orderAddress}</SpanStyled>
+                            <SpanStyled>
                               Fast delivery: {order.orderFast ? "Yes" : "No"}
-                            </p>
+                            </SpanStyled>
+                            </>
+                            
                           </div>
                           <div>
                             <IngredientStyled>Ingradients</IngredientStyled>
+                            <HolderStyled>
                             {Object.entries(order.orderProducts).map((el) => {
                               return (
                                 <div key={order._id + el[0]}>
                                   <span>{el[0]} : </span>
-                                  <span>{el[1]} ,</span>
+                                  <SpanStyled>{el[1]}</SpanStyled>
                                 </div>
                               );
                             })}
+                            </HolderStyled>
+                            
                           </div>
                         </BoxDetailStyled>
                       ) : null}
@@ -145,7 +155,7 @@ const Orders: React.FC = () => {
                   />
                 </Stack>
               </PaginationHolder>
-            </>
+            </BoxStyled>
           )}
         </>
       )}
@@ -155,26 +165,29 @@ const Orders: React.FC = () => {
 const Wrapper = styled.div({
   color: "#fff",
   width: "100%",
-  padding: "30px",
-  height: " 70vh",
+  padding: "30px 30px 0",
   background: "rgba(49, 47, 48, 0.8)",
   borderRadius: "5px",
   boxShadow: "7px 10px 5px #fa5f064d",
 });
+const BoxStyled = styled.div({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  height:"95%",
+})
 const BoxDetailStyled = styled.div({
   display: "flex",
   justifyContent: "space-between",
   padding: "5px",
-  width: "50%",
+  width: "100%",
   background: "#ddd",
   color: "#000",
   minHeight: "80px",
   borderRadius: "5px",
 });
 
-const Tittle = styled.h3({
-  color: "#FF6B0B",
-});
+
 const ItemTittle = styled.span`
   margin: 0 10px;
   color: ${(props) => (props.className === "active" ? "#ff6b0b" : "#fff")};
@@ -185,10 +198,11 @@ const IngredientStyled = styled.h4({
   margin: "5px 0",
 });
 const ListStyled = styled.ul({
+  margin: "5px 0 5px",
   listStyle: "none",
   overflow: "auto",
   boxSizing: "border-box",
-  height: "85%",
+  minHeight: "85%",
   color: "#fff",
   textAlign: "left",
   background: "rgba(100, 100, 100, 0.4)",
@@ -196,8 +210,15 @@ const ListStyled = styled.ul({
 });
 const ItemStyled = styled.li({
   padding: "5px",
-  width: "80%",
+  width: "95%",
 });
+const HolderStyled = styled.div({
+  display: "flex",
+  alignItems: "center",
+})
+const SpanStyled = styled.span({
+  margin: "0 10px 0 0",
+})
 const PaginationHolder = styled.div({
   display: "flex",
   justifyContent: "center",

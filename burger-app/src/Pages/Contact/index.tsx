@@ -4,19 +4,25 @@ import Loader from "../../components/Main_Components/Loader";
 import { useAppSelector, useAppDispatch } from "../../store";
 import { fetchContacts } from "../../features/contactsSlice";
 import Error from "../../components/Main_Components/Error/index";
-
+import  CallIcon  from '@mui/icons-material/Call';
+import EmailIcon from '@mui/icons-material/Email';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import Map from "../../components/Main_Components/Maps/index"
+import Tittle from "../../components/Main_Components/Tittle";
 
 const Contact: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { loading, contacts, location, error } = useAppSelector(
+  const { loading, contacts, error } = useAppSelector(
     (store) => store.contacts
   );
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+  const [fB, inst, , phone, email, worktime ]= contacts
   return (
     <Wrapper>
-      <Tittle>Contacts</Tittle>
+      <Tittle text="Contacts" />
       {loading ? (
         <Loader />
       ) : (
@@ -26,29 +32,33 @@ const Contact: React.FC = () => {
           ) : (
             <>
               <ListStyled>
-                {contacts.map((el:string[]) => {
-                  return (
-                    <ItemStyled key={el[0]}>
-                      <SpanStyled>{el[0]} : </SpanStyled>
-                      <SpanStyled>{el[1]}</SpanStyled>
+                    <ItemStyled >
+                      <SpanStyled>{worktime[0]} : </SpanStyled>
+                      <SpanStyled>{worktime[1]}</SpanStyled>
                     </ItemStyled>
-                  );
-                })}
-              </ListStyled>{" "}
-              <>
-                <SpanStyled>Locations : </SpanStyled>
-                <ListStyled>
-                {location.map((el) => {
-                  return (
-                    <ItemStyled key={"location" + el}>
-                      <SpanStyled>{el[0]} : </SpanStyled>
-                      <SpanStyled>{el[1]} : </SpanStyled>
-                    </ItemStyled>
-                  );
-                })}
-                </ListStyled>
-                
-              </>
+              </ListStyled>
+              <div>
+              <LinkStyled href={`mailto:${email[1]}`}>
+                <EmailIcon />
+                <span> {email[1]}</span>
+              </LinkStyled>
+              <LinkStyled href={`tel:${phone[1]}`}>
+                <CallIcon />
+                <span> {phone[1]}</span>
+              </LinkStyled>
+              <LinkStyled href={fB[1]}>
+                <FacebookIcon />
+              </LinkStyled>
+              <LinkStyled href={inst[1]}>
+                <InstagramIcon />
+              </LinkStyled>
+              <div>
+              
+              </div>
+              
+              </div>
+              
+              <Map   />
             </>
           )}
         </>
@@ -66,9 +76,7 @@ const Wrapper = styled.div({
   borderRadius: "5px",
   boxShadow: "7px 10px 5px #fa5f064d",
 });
-const Tittle = styled.h3({
-  color: "#FF6B0B",
-});
+
 const ListStyled = styled.ul({
   listStyle: "none",
   padding: "0",
@@ -76,6 +84,16 @@ const ListStyled = styled.ul({
 const ItemStyled = styled.li({
   padding: "5px",
 });
+const LinkStyled = styled.a({
+ 
+  verticalAlign: "center",
+  color: "#fff",
+  textDecoration: "none",
+  margin: "10px",
+  '&:hover': {
+    color:"#FF6B0B",
+  }
+})
 const SpanStyled = styled.span({
   margin: "10px",
 });

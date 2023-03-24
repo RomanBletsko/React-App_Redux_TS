@@ -22,7 +22,7 @@ interface StateI{
   loading: boolean,
   error: any,
   contacts: [string,string][],
-  location: [string,string][],
+  location: [string,string | any][],
 
 }
 const initialState:StateI = {
@@ -46,6 +46,7 @@ export const fetchContacts = createAsyncThunk<[ContactsI], undefined, {rejectVal
   }
 );
 
+
 const contactsSlice = createSlice({
   name: "contacts",
   initialState,
@@ -58,12 +59,11 @@ const contactsSlice = createSlice({
       })
       .addCase(fetchContacts.fulfilled, (state, action:PayloadAction<[ContactsI]>) => {
         state.status = "succeeded";
-        console.log(action.payload)
         const contacts = Object.entries(action.payload[0]);
         contacts.splice(0, 2);
         const localObj = contacts.splice(5, 1);
         state.contacts = contacts;
-        state.location = Object.entries(localObj[0][1]);
+        state.location =  Object.entries(localObj[0][1])
         state.loading = false;
         state.error = null;
       })

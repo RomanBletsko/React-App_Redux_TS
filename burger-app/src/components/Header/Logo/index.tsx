@@ -4,7 +4,7 @@ import image from "./img/logo1.png";
 const Logo: React.FC = () => {
   return (
     <LogoWraper>
-      <a href="http://RomanBletsko.github.io/React-App_Redux_TS">
+      <a href="/React-App_Redux_TS">
         <img src={image} alt="Logo" />
       </a>
     </LogoWraper>

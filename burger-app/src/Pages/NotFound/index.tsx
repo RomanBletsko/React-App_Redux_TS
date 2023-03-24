@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import Tittle from "../../components/Main_Components/Tittle";
 
 const NotFound:React.FC = () => {
   return (
     <Wrapper>
-      <span>Not Found</span>
+      <Tittle  text="Not Found!!!" />
     </Wrapper>
   );
 };

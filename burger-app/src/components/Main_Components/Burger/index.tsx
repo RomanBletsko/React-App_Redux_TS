@@ -2,7 +2,7 @@ import styled from "styled-components";
 import backGroundImg from "../../../assets/bg.jpg";
 import { useAppSelector, useAppDispatch } from "../../../store";
 import { modalActiveChange } from "../../../features/orderSlice";
-
+import Tittle from "../Tittle";
 const Burger: React.FC = () => {
   const { orderPrice, ingredientAddingOrder } = useAppSelector(
     (store) => store.burger
@@ -21,7 +21,7 @@ const Burger: React.FC = () => {
   return (
     <div>
       <Div>
-        <Tittle>Burger price: {orderPrice} ₴</Tittle>
+        
         <BurgerWrapper>
           <TopBun
             src={require("../../../assets/products/top_bun.png")}
@@ -53,7 +53,7 @@ const Burger: React.FC = () => {
             alt="Bottom bun"
           />
         </BurgerWrapper>
-
+        <Tittle text={`Burger price: ${orderPrice} ₴`} />
         <Btn onClick={handleModal}>Checkout</Btn>
       </Div>
     </div>
@@ -70,9 +70,7 @@ const Div = styled.div({
   backgroundSize: "cover",
   borderRadius: "15px",
 });
-const Tittle = styled.h3({
-  color: "#FF6B0B",
-});
+
 const Paragraph = styled.p({
   position: "absolute",
   top: "30%",
@@ -86,7 +84,7 @@ const BurgerWrapper = styled.div({
   justifyContent: "end",
   flexDirection: "column",
   alignItems: "center",
-  paddingBottom: "50px",
+  paddingBottom: "20px",
 });
 const TopBun = styled.img({
   width: "200px",
@@ -100,12 +98,12 @@ const BottomBun = styled.img({
   width: "200px",
 });
 const Btn = styled.button`
-  margin-bottom: 30px;
+  margin: 30px 0;
   background: #ff6b0b;
-  font-weight: 800;
+  font-weight: 700;
   border-radius: 5px;
   border: none;
-  padding: 7px 15px;
+  padding: 5px 15px;
   &:hover {
     scale: 120%;
   }

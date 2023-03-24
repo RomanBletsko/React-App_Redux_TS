@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Tittle from "../../components/Main_Components/Tittle";
 
 const FAQ: React.FC = () => {
   const faq: string[][] = [
@@ -8,7 +9,7 @@ const FAQ: React.FC = () => {
   ];
   return (
     <Wrapper>
-      <Tittle>FAQ</Tittle>
+      <Tittle text="FAQ" />
       <ListStyled>
         {faq.map((el) => {
           return (
@@ -25,15 +26,12 @@ const FAQ: React.FC = () => {
 const Wrapper = styled.div({
   width: "100%",
   color: "#fff",
-  height: " 70vh",
   background: "rgba(49, 47, 48, 0.8)",
   padding: "30px",
   borderRadius: "5px",
   boxShadow: "7px 10px 5px #fa5f064d",
 });
-const Tittle = styled.h3({
-  color: "#FF6B0B",
-});
+
 const ListStyled = styled.ul({
   listStyle: "none",
   overflow: "auto",

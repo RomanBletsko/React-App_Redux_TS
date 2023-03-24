@@ -17,5 +17,6 @@ const Ingredient: React.FC<IngredientProps> = ({ name, price }) => {
 const PriceItem = styled.li({
   padding: "10px",
   color: "#fff",
+  fontSize:"16px",
 });
 export default Ingredient;
