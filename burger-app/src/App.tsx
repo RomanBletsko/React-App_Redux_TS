@@ -29,7 +29,7 @@ const BurgerApp:React.FC=()=> {
 }
 const Body = styled.div({
   width: "100%",
-  height: "100vh",
+  minHeight: "100vh",
   backgroundImage: `url(${backgrounImg})`,
   backgroundSize: "cover",
 });
@@ -37,7 +37,7 @@ const Body = styled.div({
 const BodyWrapper = styled.div({
   margin: "0 auto",
   maxWidth: "1211px",
-  minHeight:"100%",
+  minHeight:"100vh",
   padding: "20px",
   display: "grid",
   gridTemplateRows: "100px auto 50px",
