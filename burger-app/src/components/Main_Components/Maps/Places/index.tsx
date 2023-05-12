@@ -22,7 +22,8 @@ const Places:React.FC<handleSelect>=({handleSelect})=>{
       <>
         {location.map((el, index)=>{
           return <li key={el[0] + index}>
-            <button className='border-0 rounded-sm px-2 py-0 bg-gray-100 text-gray-900 hover:bg-orange-500 ' 
+            <button 
+            className='border-0 rounded-sm px-2 py-0 bg-gray-100 text-gray-900 hover:bg-orange-500 ' 
             onClick={handlePlace} 
             data-city={el[0]} 
             data-address={el[1]}>{el[0]}</button>

@@ -10,6 +10,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Map from "../../components/Main_Components/Maps/index"
 import Tittle from "../../components/Main_Components/Tittle";
+import { media } from "../../Utils/Responsive";
 
 const Contact: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -52,12 +53,7 @@ const Contact: React.FC = () => {
               <LinkStyled href={inst[1]}>
                 <InstagramIcon />
               </LinkStyled>
-              <div>
-              
               </div>
-              
-              </div>
-              
               <Map   />
             </>
           )}
@@ -66,16 +62,21 @@ const Contact: React.FC = () => {
     </Wrapper>
   );
 };
-const Wrapper = styled.div({
-  width: "100%",
-  color: "#fff",
-  minHeight: " 70vh",
-  background: "rgba(49, 47, 48, 0.8)",
-
-  padding: "30px",
-  borderRadius: "5px",
-  boxShadow: "7px 10px 5px #fa5f064d",
-});
+const Wrapper = styled.div`
+  width: 100%;
+  color: #fff;
+  background: rgba(49, 47, 48, 0.8);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 7px 10px 5px #fa5f064d;
+  ${media.phone}{
+    
+    border-radius: 5px;
+    padding: 30px 10px 0;
+    box-shadow: none;
+  }
+  
+`;
 
 const ListStyled = styled.ul({
   listStyle: "none",
@@ -85,11 +86,11 @@ const ItemStyled = styled.li({
   padding: "5px",
 });
 const LinkStyled = styled.a({
- 
+  display: "inline-block",
   verticalAlign: "center",
   color: "#fff",
   textDecoration: "none",
-  margin: "10px",
+  margin: "5px",
   '&:hover': {
     color:"#FF6B0B",
   }

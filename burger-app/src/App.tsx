@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { Header, Footer} from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Contact, FAQ, NotFound, Orders, Main } from "./Pages";
+import { media } from "./Utils/Responsive";
 
 const BurgerApp:React.FC=()=> {
 
@@ -29,19 +30,24 @@ const BurgerApp:React.FC=()=> {
 }
 const Body = styled.div({
   width: "100%",
-  minHeight: "100vh",
+  height: "auto",
   backgroundImage: `url(${backgrounImg})`,
+  
   backgroundSize: "cover",
 });
 
-const BodyWrapper = styled.div({
-  margin: "0 auto",
-  maxWidth: "1211px",
-  minHeight:"100vh",
-  padding: "20px",
-  display: "grid",
-  gridTemplateRows: "100px auto 50px",
-  gap: "20px",
- 
-});
+const BodyWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 1211px;
+  min-height:100vh;
+  padding: 20px;
+  display: grid;
+  grid-template-rows:  100px auto 50px;
+  gap: 20px;
+  ${media.phone}{
+    gap: 0;
+    padding: 0px;
+    grid-template-rows: 60px auto 30px;
+  }
+`
 export default BurgerApp;

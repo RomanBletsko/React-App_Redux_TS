@@ -82,13 +82,15 @@ const Div = styled.div`
     padding-top: 10px;
   }
 `;
-const ControlsList = styled.ul({
-  margin: " 20px",
-  listStyle: "none",
-  padding: "0",
-  textAlign: "start",
-  
-});
+const ControlsList = styled.ul`
+  margin:  20px;
+  list-style: none;
+  padding: 0;
+  text-align: start;
+  ${media.phone} {  
+  margin: 0px 20px 10px;
+}
+`;
 
 const ControlsItem = styled.li({
   margin: "7px 0",

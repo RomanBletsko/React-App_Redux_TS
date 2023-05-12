@@ -28,26 +28,31 @@ const SingleControl: React.FC < SingleControlProps > = ({ name, quantitie, updat
   );
 };
 
-const Wrapper = styled.div({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  gap:"20px",
-  width:"100%"
-});
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  fontSize: 20px;
+  line-height: 24px;
+  ${media.phone}{
+    fontSize: 14px;
+    line-height: 18px;
+  }
+`;
 const Holder = styled.div({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  width:"60%"
+  width:"60%",
+ 
 });
 
 const Decrement = styled.button({
   border: "1px solid #fff",
   backgroundColor: "transparent",
   color: "#fff",
-  fontSize: "20px",
-  lineHeight: "24px",
   borderRadius: "5px",
   padding: "0 8px",
   margin: "0 5px",
@@ -56,8 +61,6 @@ const Increment = styled.button({
   border: "1px solid #fff",
   backgroundColor: "transparent",
   color: "#fff",
-  fontSize: "20px",
-  lineHeight: "24px",
   borderRadius: "5px",
   padding: "0 6px",
   margin: "0 5px",

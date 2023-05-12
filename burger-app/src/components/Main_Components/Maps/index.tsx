@@ -10,7 +10,7 @@ import  Places  from "./Places/index";
 const API_KEY:string = process.env.REACT_APP_API_KEY || ""
 
 const containerStyle = {
-    width: '500px',
+    width: 'auto',
     height: '400px',
     
 };

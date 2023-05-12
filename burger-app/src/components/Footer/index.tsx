@@ -10,7 +10,7 @@ const  Footer: React.FC = () => {
 
 const FooterStyled = styled.section({
   width: "100%",
-  height: "50px",
+  maxHeight: "50px",
   background: "rgba(49, 47, 48, 0.8)",
   padding: "0 20px",
   display: "flex",

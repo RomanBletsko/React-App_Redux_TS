@@ -42,10 +42,10 @@ const Main:React.FC = () => {
 };
 
 const Wrapper = styled.div`
-  width: 100%;
+ width: 100%;
+  min-height:  70vh;
   display: grid;
   grid-template-columns: 15% 70% 15%;
-  // height:  80%;
   background: rgba(49, 47, 48, 0.8);
   text-align: center;
   padding: 0;
@@ -55,7 +55,7 @@ const Wrapper = styled.div`
     grid-template-columns: 170px auto 170px;
   }
   ${media.phone}{
-    grid-template-rows: 60% 40% ;
+    grid-template-rows: 57% 43% ;
     grid-template-columns: 100%;
   }
 `;

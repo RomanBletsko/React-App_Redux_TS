@@ -16,7 +16,6 @@ const  Header: React.FC = () => {
 
 const HeaderStyled = styled.section`
   width: 100%;
-  height: 100px;
   background: rgba(49, 47, 48, 0.8);
   padding: 0 20px;
   display: flex;
@@ -27,7 +26,10 @@ const HeaderStyled = styled.section`
   ${media.tablet} {
     justify-content: space-around;
   };
-  
+  ${media.phone}{
+    border-radius: 0;
+    box-shadow: none;
+  }
 `;
 const Tittle = styled.h2`
   color: #FF6B0B;

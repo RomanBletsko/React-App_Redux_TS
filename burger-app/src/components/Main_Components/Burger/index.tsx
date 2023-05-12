@@ -3,20 +3,22 @@ import backGroundImg from "../../../assets/bg.jpg";
 import { useAppSelector, useAppDispatch } from "../../../store";
 import { modalActiveChange } from "../../../features/orderSlice";
 import Tittle from "../Tittle";
+import { media } from "../../../Utils/Responsive";
 const Burger: React.FC = () => {
   const { orderPrice, ingredientAddingOrder } = useAppSelector(
     (store) => store.burger
   );
   const dispatch = useAppDispatch();
   const positionTopBun = ingredientAddingOrder.length
-    ? 115 + 20 * ingredientAddingOrder.length
-    : 150;
+    ?  80 + 20 * ingredientAddingOrder.length
+    :   130 
   const zIndexTopBun = ingredientAddingOrder.length + 1;
   const handleModal = () => {
     if (ingredientAddingOrder.length !== 0) {
       dispatch(modalActiveChange());
     }
   };
+ 
 
   return (
     <div>
@@ -42,7 +44,7 @@ const Burger: React.FC = () => {
                 src={require(`../../../assets/products/${product}.png`)}
                 alt={product}
                 style={{
-                  bottom: 95 + index * 20,
+                  bottom:  65  + index * 20,
                   zIndex: index + 1,
                 }}
               />
@@ -59,33 +61,44 @@ const Burger: React.FC = () => {
     </div>
   );
 }
-const Div = styled.div({
-  marginTop: "15px",
-  height: "95%",
-  display: "flex",
-  justifyContent: "end",
-  flexDirection: "column",
-  alignItems: "center",
-  backgroundImage: `url(${backGroundImg})`,
-  backgroundSize: "cover",
-  borderRadius: "15px",
-});
+const Div = styled.div`
+  margin-top: 15px;
+  height: 95%;
+  display: flex;
+  justifyC-content: end;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(${backGroundImg});
+  background-size: cover;
+  border-radius: 15px;
+  ${media.phone}{
+    margin: 0;
+    border-radius: 0;
+    height: 100%;
+  }
+`;
 
-const Paragraph = styled.p({
-  position: "absolute",
-  top: "30%",
-  color: "#FF6B0B",
-});
-const BurgerWrapper = styled.div({
-  position: "relative",
-  height: "90%",
-  width: "50%",
-  display: "flex",
-  justifyContent: "end",
-  flexDirection: "column",
-  alignItems: "center",
-  paddingBottom: "20px",
-});
+const Paragraph = styled.p`
+  position: absolute;
+  top: 30%;
+  color: #FF6B0B;
+  ${media.phone}{
+    top: 10%;
+  }
+`;
+const BurgerWrapper = styled.div`
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  ${media.phone}{
+    padding-bottom: 0px;
+  }
+`;
 const TopBun = styled.img({
   width: "200px",
   position: "absolute",
@@ -106,6 +119,9 @@ const Btn = styled.button`
   padding: 5px 15px;
   &:hover {
     scale: 120%;
+  }
+  ${media.phone}{
+    margin: 5px 0;
   }
 `;
 

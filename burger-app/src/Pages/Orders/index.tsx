@@ -9,6 +9,7 @@ import Stack from "@mui/material/Stack";
 import "./style.css";
 import Error from "../../components/Main_Components/Error/index";
 import Tittle from "../../components/Main_Components/Tittle";
+import { media } from "../../Utils/Responsive";
 
 const style = {
   margin: "5px",
@@ -162,19 +163,25 @@ const Orders: React.FC = () => {
     </Wrapper>
   );
 };
-const Wrapper = styled.div({
-  color: "#fff",
-  width: "100%",
-  padding: "30px 30px 0",
-  background: "rgba(49, 47, 48, 0.8)",
-  borderRadius: "5px",
-  boxShadow: "7px 10px 5px #fa5f064d",
-});
+const Wrapper = styled.div`
+  color: #fff;
+  width: 100%;
+  min-height:  100%;
+  padding: 30px 30px 0;
+  background: rgba(49, 47, 48, 0.8);
+  border-radius: 5px;
+  box-shadow: 7px 10px 5px #fa5f064d;
+  ${media.phone}{
+    border-radius: 0;
+    box-shadow: none;
+    padding: 30px 10px 0;
+  }
+`;
 const BoxStyled = styled.div({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  height:"95%",
+  height: "94%"
 })
 const BoxDetailStyled = styled.div({
   display: "flex",
@@ -198,20 +205,25 @@ const IngredientStyled = styled.h4({
   margin: "5px 0",
 });
 const ListStyled = styled.ul({
-  margin: "5px 0 5px",
+  margin: "5px 0",
   listStyle: "none",
   overflow: "auto",
-  boxSizing: "border-box",
-  minHeight: "85%",
+  // boxSizing: "border-box",
+  height: "85%",
   color: "#fff",
   textAlign: "left",
   background: "rgba(100, 100, 100, 0.4)",
   borderRadius: "5px",
 });
-const ItemStyled = styled.li({
-  padding: "5px",
-  width: "95%",
-});
+const ItemStyled = styled.li`
+  padding: 5px;
+  
+  ${media.phone}{
+    padding: 5px 0;
+    width: 100%;
+  }
+
+`;
 const HolderStyled = styled.div({
   display: "flex",
   alignItems: "center",
