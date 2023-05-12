@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-App_Redux_TS/static/css/main.1a436ac4.css",
-    "main.js": "/React-App_Redux_TS/static/js/main.abae5171.js",
+    "main.css": "/React-App_Redux_TS/static/css/main.e48ec4b3.css",
+    "main.js": "/React-App_Redux_TS/static/js/main.9623a0f9.js",
     "static/media/bg.jpg": "/React-App_Redux_TS/static/media/bg.836be3a2c2a3d1fa22da.jpg",
     "static/media/meat.png": "/React-App_Redux_TS/static/media/meat.321db7d1003cc562588a.png",
     "static/media/salad.png": "/React-App_Redux_TS/static/media/salad.95adbe5ffcaf21433779.png",
@@ -14,11 +14,11 @@
     "static/media/bacon.png": "/React-App_Redux_TS/static/media/bacon.f0fac70a552e11d553ad.png",
     "static/media/logo1.png": "/React-App_Redux_TS/static/media/logo1.fbf95ec55f06cdd5f2fc.png",
     "index.html": "/React-App_Redux_TS/index.html",
-    "main.1a436ac4.css.map": "/React-App_Redux_TS/static/css/main.1a436ac4.css.map",
-    "main.abae5171.js.map": "/React-App_Redux_TS/static/js/main.abae5171.js.map"
+    "main.e48ec4b3.css.map": "/React-App_Redux_TS/static/css/main.e48ec4b3.css.map",
+    "main.9623a0f9.js.map": "/React-App_Redux_TS/static/js/main.9623a0f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a436ac4.css",
-    "static/js/main.abae5171.js"
+    "static/css/main.e48ec4b3.css",
+    "static/js/main.9623a0f9.js"
   ]
 }
